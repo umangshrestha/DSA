@@ -1,5 +1,9 @@
 package sort
 
+import (
+	"log"
+)
+
 func IntertionSort(arr []int) {
 	for j := 1; j < len(arr); j++ {
 		key := arr[j]
@@ -7,5 +11,18 @@ func IntertionSort(arr []int) {
 			arr[i+1] = arr[i]
 		}
 		arr[j] = key
+	}
+}
+
+func TestInsertionSort(testCases []TestCase) {
+	for i, testCase := range testCases {
+		output := append([]int{}, testCase.arr...)
+		if IntertionSort(output); !isEqual(output, testCase.expected) {
+			log.Fatalf("%d: IntertionSort(%v) expected:%v observed: %v\n",
+				i,
+				testCase.arr,
+				testCase.expected,
+				output)
+		}
 	}
 }

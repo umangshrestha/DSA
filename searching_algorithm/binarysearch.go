@@ -1,5 +1,7 @@
 package search
 
+import "log"
+
 func BinarySearch(arr []int, target int) int {
 	low := 0
 	high := len(arr)
@@ -16,4 +18,17 @@ func BinarySearch(arr []int, target int) int {
 		}
 	}
 	return pos
+}
+
+func TestBinarySearch(testCases []TestCase) {
+	for i, testCase := range testCases {
+		if output := BinarySearch(testCase.arr, testCase.target); output != testCase.expected {
+			log.Fatalf("%d: BinarySearch(%v, %d) expected:%d observed: %d\n",
+				i,
+				testCase.arr,
+				testCase.target,
+				testCase.expected,
+				output)
+		}
+	}
 }

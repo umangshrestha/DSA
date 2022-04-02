@@ -1,5 +1,7 @@
 package sort
 
+import "log"
+
 func BubbleSort(arr []int) {
 	for j := 0; j < len(arr); j++ {
 		isSorted := true
@@ -15,6 +17,19 @@ func BubbleSort(arr []int) {
 
 		if isSorted {
 			break
+		}
+	}
+}
+
+func TestBubbleSort(testCases []TestCase) {
+	for i, testCase := range testCases {
+		output := append([]int{}, testCase.arr...)
+		if BubbleSort(output); !isEqual(output, testCase.expected) {
+			log.Fatalf("%d: BubbleSort(%v) expected:%v observed: %v\n",
+				i,
+				testCase.arr,
+				testCase.expected,
+				output)
 		}
 	}
 }
