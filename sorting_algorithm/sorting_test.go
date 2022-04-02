@@ -26,15 +26,15 @@ var OneOff = []TestCase{
 }
 
 func Benchmark_MergeSort(t *testing.B) {
-	TestMergeSort(OneOff)
+	runTestCases(MergeSort, OneOff)
 }
 
 func Benchmark_BubbleSort(t *testing.B) {
-	TestBubbleSort(OneOff)
+	runTestCases(BubbleSort, OneOff)
 }
 
 func Benchmark_InsertionSort(t *testing.B) {
-	TestBubbleSort(OneOff)
+	runTestCases(IntertionSort, OneOff)
 }
 
 var VaringSize = []TestCase{
@@ -53,15 +53,15 @@ var VaringSize = []TestCase{
 }
 
 func Benchmark_MergeSort_varyingSize(t *testing.B) {
-	TestMergeSort(VaringSize)
+	runTestCases(MergeSort, VaringSize)
 }
 
 func Benchmark_BubbleSort_varyingSize(t *testing.B) {
-	TestBubbleSort(VaringSize)
+	runTestCases(BubbleSort, VaringSize)
 }
 
 func Benchmark_InsertionSort_varyingSize(t *testing.B) {
-	TestBubbleSort(VaringSize)
+	runTestCases(IntertionSort, VaringSize)
 }
 
 var DescendingOrder = []TestCase{
@@ -70,15 +70,15 @@ var DescendingOrder = []TestCase{
 }
 
 func Benchmark_MergeSort_DescendingOrder(t *testing.B) {
-	TestMergeSort(DescendingOrder)
+	runTestCases(MergeSort, DescendingOrder)
 }
 
 func Benchmark_BubbleSort_DescendingOrder(t *testing.B) {
-	TestBubbleSort(DescendingOrder)
+	runTestCases(BubbleSort, DescendingOrder)
 }
 
 func Benchmark_InsertionSort_DescendingOrder(t *testing.B) {
-	TestBubbleSort(DescendingOrder)
+	runTestCases(IntertionSort, DescendingOrder)
 }
 
 var AscendingOrder = []TestCase{
@@ -87,15 +87,15 @@ var AscendingOrder = []TestCase{
 }
 
 func Benchmark_MergeSort_AscendingOrder(t *testing.B) {
-	TestMergeSort(AscendingOrder)
+	runTestCases(MergeSort, AscendingOrder)
 }
 
 func Benchmark_BubbleSort_AscendingOrder(t *testing.B) {
-	TestBubbleSort(AscendingOrder)
+	runTestCases(BubbleSort, AscendingOrder)
 }
 
 func Benchmark_InsertionSort_AscendingOrder(t *testing.B) {
-	TestBubbleSort(AscendingOrder)
+	runTestCases(IntertionSort, AscendingOrder)
 }
 
 var EmptyArray = []TestCase{
@@ -103,15 +103,15 @@ var EmptyArray = []TestCase{
 }
 
 func Benchmark_MergeSort_EmptyArray(t *testing.B) {
-	TestMergeSort(EmptyArray)
+	runTestCases(MergeSort, EmptyArray)
 }
 
 func Benchmark_BubbleSort_EmptyArray(t *testing.B) {
-	TestBubbleSort(EmptyArray)
+	runTestCases(BubbleSort, EmptyArray)
 }
 
 func Benchmark_InsertionSort_EmptyArray(t *testing.B) {
-	TestBubbleSort(EmptyArray)
+	runTestCases(BubbleSort, EmptyArray)
 }
 
 var DuplicateElements = []TestCase{

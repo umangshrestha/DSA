@@ -1,9 +1,5 @@
 package sort
 
-import (
-	"log"
-)
-
 func MergeSort(A []int) {
 	if len(A) > 1 {
 		mid := len(A) >> 1
@@ -44,19 +40,6 @@ func MergeSort(A []int) {
 			A[Apos] = R[Rpos]
 			Apos++
 			Rpos++
-		}
-	}
-}
-
-func TestMergeSort(testCases []TestCase) {
-	for i, testCase := range testCases {
-		output := append([]int{}, testCase.arr...)
-		if MergeSort(output); !isEqual(output, testCase.expected) {
-			log.Fatalf("%d: MergeSort(%v) expected:%v observed: %v\n",
-				i,
-				testCase.arr,
-				testCase.expected,
-				output)
 		}
 	}
 }

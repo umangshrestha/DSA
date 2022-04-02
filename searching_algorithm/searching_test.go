@@ -17,11 +17,11 @@ var ElementinArray = []TestCase{
 }
 
 func Benchmark_BinarySearch(t *testing.B) {
-	TestBinarySearch(ElementinArray)
+	runTestCases(BinarySearch, ElementinArray)
 }
 
 func Benchmark_LinearSearch(t *testing.B) {
-	TestLinearSearch(ElementinArray)
+	runTestCases(LinearSearch, ElementinArray)
 }
 
 var VaringSize = []TestCase{
@@ -54,11 +54,11 @@ var VaringSize = []TestCase{
 }
 
 func Benchmark_BinarySearch_VaringSize(t *testing.B) {
-	TestBinarySearch(VaringSize)
+	runTestCases(BinarySearch, VaringSize)
 }
 
 func Benchmark_LinearSearch_VaringSize(t *testing.B) {
-	TestLinearSearch(VaringSize)
+	runTestCases(LinearSearch, VaringSize)
 }
 
 var DuplicateElements = []TestCase{
@@ -68,11 +68,11 @@ var DuplicateElements = []TestCase{
 }
 
 func Benchmark_BinarySearch_DuplicateElements(t *testing.B) {
-	TestBinarySearch(DuplicateElements)
+	runTestCases(BinarySearch, DuplicateElements)
 }
 
 func Benchmark_LinearSearch_DuplicateElements(t *testing.B) {
-	TestLinearSearch(DuplicateElements)
+	runTestCases(LinearSearch, DuplicateElements)
 }
 
 var EmptyArray = []TestCase{
@@ -83,11 +83,11 @@ var EmptyArray = []TestCase{
 }
 
 func Benchmark_BinarySearch_EmptyArray(t *testing.B) {
-	TestBinarySearch(EmptyArray)
+	runTestCases(BinarySearch, EmptyArray)
 }
 
 func Benchmark_LinearSearch_EmptyArray(t *testing.B) {
-	TestLinearSearch(EmptyArray)
+	runTestCases(LinearSearch, EmptyArray)
 }
 
 var NotInArray = []TestCase{
@@ -99,9 +99,9 @@ var NotInArray = []TestCase{
 }
 
 func Benchmark_BinarySearch_NotInArray(t *testing.B) {
-	TestBinarySearch(NotInArray)
+	runTestCases(BinarySearch, NotInArray)
 }
 
 func Benchmark_LinearSearch_NotInArray(t *testing.B) {
-	TestLinearSearch(NotInArray)
+	runTestCases(LinearSearch, NotInArray)
 }

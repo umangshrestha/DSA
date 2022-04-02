@@ -1,7 +1,5 @@
 package psearch
 
-import "log"
-
 func NativeSearch(data, pattern string) []int {
 	p := len(pattern)
 	d := len(data)
@@ -16,17 +14,4 @@ func NativeSearch(data, pattern string) []int {
 
 	}
 	return out
-}
-
-func TestNativeSearch(testCases []TestCase) {
-	for i, testCase := range testCases {
-		if output := NativeSearch(testCase.data, testCase.pattern); !isEqual(output, testCase.expected) {
-			log.Fatalf("%d: NativeSearch(\"%s\", \"%s\") expected:%v observed: %v\n",
-				i,
-				testCase.data,
-				testCase.pattern,
-				testCase.expected,
-				output)
-		}
-	}
 }

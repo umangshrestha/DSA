@@ -1,9 +1,5 @@
 package psearch
 
-import (
-	"log"
-)
-
 const Size = 2 << 8 // handing only UTF-8
 // boyermoore
 func badHeruristic(pattern string) []int {
@@ -39,17 +35,4 @@ func BoyerMooreSearch(data, pattern string) []int {
 		}
 	}
 	return out
-}
-
-func TestBoyerMooreSearch(testCases []TestCase) {
-	for i, testCase := range testCases {
-		if output := BoyerMooreSearch(testCase.data, testCase.pattern); !isEqual(output, testCase.expected) {
-			log.Fatalf("%d: BoyerMooreSearch(\"%s\", \"%s\") expected:%v observed: %v\n",
-				i,
-				testCase.data,
-				testCase.pattern,
-				testCase.expected,
-				output)
-		}
-	}
 }
