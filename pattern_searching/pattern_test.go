@@ -19,12 +19,12 @@ func Benchmark_NativeSearch(t *testing.B) {
 	TestNativeSearch(OneWord)
 }
 
-func Benchmark_BoyerMoore(t *testing.B) {
-	TestBoyerMoore(OneWord)
+func Benchmark_BoyerMooreSerch(t *testing.B) {
+	TestBoyerMooreSearch(OneWord)
 }
 
 var EmptyData = []TestCase{
-	{"", "", []int{}},
+	{"", "", []int{0}},
 	{"Apple", "", []int{}},
 	{"", "Apple", []int{}},
 }
@@ -33,5 +33,5 @@ func Benchmark_NativeSearch_EmptyData(t *testing.B) {
 	TestNativeSearch(OneWord)
 }
 func Benchmark_BoyerMoore_EmptyData(t *testing.B) {
-	TestBoyerMoore(EmptyData)
+	TestBoyerMooreSearch(EmptyData)
 }
