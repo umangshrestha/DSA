@@ -2,24 +2,6 @@ package sort
 
 import "testing"
 
-type TestCase struct {
-	arr      []int
-	expected []int
-}
-
-func isEqual(output, expected []int) bool {
-	if len(output) != len(expected) {
-		return false
-	}
-
-	for j := 0; j < len(expected); j++ {
-		if output[j] != expected[j] {
-			return false
-		}
-	}
-	return true
-}
-
 var OneOff = []TestCase{
 	{[]int{1, 0, 2, 3, 4, 5, 6, 7, 8, 9, 10}, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}},
 	{[]int{2, 0, 1, 3, 4, 5, 6, 7, 8, 9, 10}, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}},
@@ -134,16 +116,4 @@ func Benchmark_InsertionSort_EmptyArray(t *testing.B) {
 
 var DuplicateElements = []TestCase{
 	{[]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}},
-}
-
-func Benchmark_MergeSort_DuplicateElements(t *testing.B) {
-	TestMergeSort(EmptyArray)
-}
-
-func Benchmark_BubbleSort_DuplicateElements(t *testing.B) {
-	TestBubbleSort(EmptyArray)
-}
-
-func Benchmark_InsertionSort_DuplicateElements(t *testing.B) {
-	TestBubbleSort(EmptyArray)
 }
