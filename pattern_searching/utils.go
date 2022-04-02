@@ -1,4 +1,4 @@
-package ssearch
+package psearch
 
 type TestCase struct {
 	data     string
@@ -17,11 +17,4 @@ func isEqual(output, expected []int) bool {
 		}
 	}
 	return true
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }

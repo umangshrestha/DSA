@@ -1,4 +1,4 @@
-package ssearch
+package psearch
 
 import "testing"
 
@@ -15,6 +15,10 @@ var OneWord = []TestCase{
 	{"Apple", "p", []int{1, 2}},
 }
 
+func Benchmark_NativeSearch(t *testing.B) {
+	TestNativeSearch(OneWord)
+}
+
 func Benchmark_BoyerMoore(t *testing.B) {
 	TestBoyerMoore(OneWord)
 }
@@ -25,6 +29,9 @@ var EmptyData = []TestCase{
 	{"", "Apple", []int{}},
 }
 
+func Benchmark_NativeSearch_EmptyData(t *testing.B) {
+	TestNativeSearch(OneWord)
+}
 func Benchmark_BoyerMoore_EmptyData(t *testing.B) {
 	TestBoyerMoore(EmptyData)
 }
