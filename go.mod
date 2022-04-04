@@ -1,3 +1,3 @@
-module github.com/umangshrestha/learning-dsa
+module github.com/umangshrestha/DSA
 
 go 1.18
