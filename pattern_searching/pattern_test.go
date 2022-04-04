@@ -8,6 +8,8 @@ var OneWord = []TestCase{
 	{"Apple", "App", []int{0}},
 	{"Apple", "Appl", []int{0}},
 	{"Apple", "Apple", []int{0}},
+	{"Apple", "AppleB", []int{}},
+	{"Apple", "ApplerBall", []int{}},
 	{"Apple", "pple", []int{1}},
 	{"Apple", "ple", []int{2}},
 	{"Apple", "le", []int{3}},
@@ -19,6 +21,9 @@ func Benchmark_NativeSearch(t *testing.B) {
 	runTestCases(NativeSearch, OneWord)
 }
 
+func Benchmark_KMPSearch(t *testing.B) {
+	runTestCases(KMPSearch, OneWord)
+}
 func Benchmark_BoyerMooreSerch(t *testing.B) {
 	runTestCases(BoyerMooreSearch, OneWord)
 }
@@ -32,6 +37,11 @@ var EmptyData = []TestCase{
 func Benchmark_NativeSearch_EmptyData(t *testing.B) {
 	runTestCases(NativeSearch, OneWord)
 }
+
+func Benchmark_KMPearch_EmptyData(t *testing.B) {
+	runTestCases(KMPSearch, EmptyData)
+}
+
 func Benchmark_BoyerMoore_EmptyData(t *testing.B) {
 	runTestCases(BoyerMooreSearch, EmptyData)
 }
