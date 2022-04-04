@@ -37,6 +37,10 @@ func Benchmark_InsertionSort(t *testing.B) {
 	runTestCases(IntertionSort, OneOff)
 }
 
+func Benchmark_QuickSort(t *testing.B) {
+	runTestCases(QuickSort, OneOff)
+}
+
 var VaringSize = []TestCase{
 	{[]int{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0}, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}},
 	{[]int{11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0}, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}},
@@ -64,6 +68,10 @@ func Benchmark_InsertionSort_varyingSize(t *testing.B) {
 	runTestCases(IntertionSort, VaringSize)
 }
 
+func Benchmark_QuickSort_varyingSize(t *testing.B) {
+	runTestCases(QuickSort, VaringSize)
+}
+
 var DescendingOrder = []TestCase{
 	{[]int{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0}, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}},
 	{[]int{100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0}, []int{0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100}},
@@ -79,6 +87,10 @@ func Benchmark_BubbleSort_DescendingOrder(t *testing.B) {
 
 func Benchmark_InsertionSort_DescendingOrder(t *testing.B) {
 	runTestCases(IntertionSort, DescendingOrder)
+}
+
+func Benchmark_QuickSort_DescendingOrder(t *testing.B) {
+	runTestCases(QuickSort, DescendingOrder)
 }
 
 var AscendingOrder = []TestCase{
@@ -98,6 +110,10 @@ func Benchmark_InsertionSort_AscendingOrder(t *testing.B) {
 	runTestCases(IntertionSort, AscendingOrder)
 }
 
+func Benchmark_QuickSort_AscendingOrder(t *testing.B) {
+	runTestCases(QuickSort, AscendingOrder)
+}
+
 var EmptyArray = []TestCase{
 	{[]int{}, []int{}},
 }
@@ -114,6 +130,26 @@ func Benchmark_InsertionSort_EmptyArray(t *testing.B) {
 	runTestCases(BubbleSort, EmptyArray)
 }
 
+func Benchmark_QuickSort_EmptyArray(t *testing.B) {
+	runTestCases(QuickSort, EmptyArray)
+}
+
 var DuplicateElements = []TestCase{
 	{[]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}},
+}
+
+func Benchmark_MergeSort_DuplicateElements(t *testing.B) {
+	runTestCases(MergeSort, DuplicateElements)
+}
+
+func Benchmark_BubbleSort_DuplicateElements(t *testing.B) {
+	runTestCases(BubbleSort, DuplicateElements)
+}
+
+func Benchmark_InsertionSort_DuplicateElements(t *testing.B) {
+	runTestCases(BubbleSort, DuplicateElements)
+}
+
+func Benchmark_QuickSort_DuplicateElements(t *testing.B) {
+	runTestCases(QuickSort, DuplicateElements)
 }
