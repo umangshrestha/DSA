@@ -9,10 +9,10 @@ func Cos(x float64) float64 {
 	term := 1.0
 	cos := 1.0
 
-	for i := 2; term != 0.0; i += 2 {
+	for i := 2.0; term != 0.0; i += 2.0 {
 		// Cos(x) = 1 - x^2/2! + x^4/4! - x^6/6! + ...
 		// OR pow(-1, n) * pow(x, 2n) / fac(2n)
-		term *= (-x * x) / float64(i*(i-1))
+		term *= (-x * x) / (i * (i - 1))
 		cos += term
 	}
 	return cos
