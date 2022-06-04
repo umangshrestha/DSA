@@ -1,4 +1,3 @@
-#include "prime.h"
 #include "linkedlist.h"
 #include <stdio.h> // for printf
 #include <stdlib.h> // for malloc and free
