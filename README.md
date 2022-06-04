@@ -1,21 +1,3 @@
-# DSA
-├── **pattern_searching**</br>
-│   ├── bmsearch   // Boyer Moore</br>
-│   ├── kmpsearch // Knuth Moris Pratt </br>
-│   └── nativesearch</br>
-├── **searching_algorithm**</br>
-│   ├── binarysearch</br>
-│   └── linearsearch</br>
-└── **sorting_algorithm**</br>
-│   ├── bubblesort</br>
-│   ├── insertionsort</br>
-│   ├── mergesort</br>
-│   └── selectionsort</br>
-└── **dynamic_programming**</br>
-└── lcs.go // longest common sequence</br>
+This is my attempt to learn DSA using different programming language. 
 
-To run the test go the given directory and run:
-
-```
-$ go test -bench ./..
-```
+I will try to implement the same algorithm with unittest in all programming language as much as possible. Let's hope I don't get lazy.
