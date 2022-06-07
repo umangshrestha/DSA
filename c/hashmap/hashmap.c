@@ -1,67 +1,74 @@
-#include<stdio.h>
-#include<stdlib.h>
-#define SIZE 10
+#include <stdio.h>
+#include <stdlib.h>
+#include "hashmap.h"
 
 
-
-typedef struct HashMap {
-    linkedlist *data[SIZE];
-} dict;
-
-
-
-dict* NewDict() {
-    // allocating memory for dict
-    dict *d = (dict *) malloc(sizeof(dict));
-    // allocating memory for linked list inside dict
-    for(int i=0; i<SIZE; i++) 
-        d->data[i] = NewLinkedList();
+hm* hmNew() {
+    // allocating memory for hm
+    hm *d = (hm*) malloc(sizeof(hm));
+    // allocating memory for linked list inside hm
 }
 
-
-void removeDict(dict *d) {
+void hmFree(hm *d) {
     // removinf data in linked list
     for (int i=0; i< SIZE; i++) 
-        //going to end of list
-        freeLinkedList(d->data[i]);
-        
-    // removing dict
-    free(d);
+        llFree(&d->data[i]);
+    // removing hm
     d = NULL;
 }
 
+int hmIsEmpty(hm *d) {
+    for(int i=0; i<SIZE; i++)  {
+       if (!llIsEmpty(&d->data[i]))
+            return 0;
+    }
+    return 1;
+}
 
-void addToDict(dict *d, int key, int value) {
-    int i = getHashMod(key);
-    node *n = (node *) malloc(sizeof(n));
-    n->key = key;
-    n->value = value;
+int hmSize(hm *d) {
+    int s = 0;
+     for(int i=0; i<SIZE; i++)  {
+       s += llSize(&d->data[i]);
+    }
+    return s;
 
-    if (d->data[i]->head == NULL) {
-        d->data[i]->head = n; 
-    } 
+}
+
+void hmAdd(hm *d, int key, int value) {
+    int i = getIndex(key);
+    llAdd(&d->data[i], key, value);  
+}
+
+void hmRemove(hm *d, int key) {
+    int i = getIndex(key);
+    llRemove(&d->data[i], key);  
 }
 
 
-void printDict(dict *d) {
-    printf("=============");
+
+void hmPrint(hm *d) {
     for (int i=0; i<SIZE; i++) {
         printf("[%d]", i);
-        printLinkedList(d->data[i]);
+        llPrint(&d->data[i]);
     }
 }
 
 
 int main() 
 {
-    linkedlist *l = NewLinkedList();
-    addToLinkedList(l, 1, 2);
-    addToLinkedList(l, 2, 2);
-    addToLinkedList(l, 2, 21);
-    printLinkedList(l);
-    freeLinkedList(l);
-    // removeDict(d);
+    hm* d = hmNew();
 
+    // for(int i=0; i<SIZE; i++) { 
+    //     int a = llIsEmpty(d->data[i]);
+    //     p   d->data = (linkedlist**) malloc(sizeof(linkedlist) * SIZE);
+    for(int i=0; i<2*SIZE; i++) {
+        hmAdd(d, i, i);
+        printf("[%d]:=>%d\n", i, hmSize(d));
+    }
+    hmRemove(d, 1);
+    hmPrint(d);
 
-    return 0;
+    // hmAdd(h, 1,2);
+    // hmPrint(h);
+    
 }

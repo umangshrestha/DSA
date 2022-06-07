@@ -1,5 +1,5 @@
 /*
-This linked list implementation is specifically defined for hashmap a.k.a Dict.
+This linked list implementation is specifically defined for hashmap a.k.a Dictionary.
 The major changes are:
 *  - Each node contains int value for key and pair
 *  - If the key exist in linked list it will update the value
