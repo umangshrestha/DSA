@@ -1,26 +1,26 @@
 package sort
 
-func QuickSort(arr []int) {
-	sort(arr, 0, len(arr)-1)
-}
-
-func sort(arr []int, low, high int) {
-	if low < high {
-		p := partition(arr, low, high)
-		sort(arr, p+1, high)
-		sort(arr, low, p-1)
-	}
-}
-
 func partition(arr []int, low, high int) int {
 	pivot := arr[high]
-	j := low
-	for i := low; i < high; i++ {
-		if arr[i] < pivot {
+	i := low - 1
+	for j := low; j < high; j++ {
+		if arr[j] <= pivot {
+			i++
 			arr[j], arr[i] = arr[i], arr[j]
-			j++
 		}
 	}
-	arr[j], arr[high] = arr[high], arr[j]
-	return j
+	i++
+	arr[i], arr[high] = arr[high], arr[i]
+	return i
+}
+
+func _quicksort(arr []int, low, high int) {
+	if low < high {
+		p := partition(arr, low, high)
+		_quicksort(arr, low, p-1)
+		_quicksort(arr, p+1, high)
+	}
+}
+func QuickSort(arr []int) {
+	_quicksort(arr, 0, len(arr)-1)
 }
